@@ -83,6 +83,7 @@
 <body>
 
 <h1>📩 Mis Cartitas</h1>
+  
 
 <div class="cards-container">
   <div class="card" onclick="openModal('cartita1')">
@@ -122,19 +123,32 @@
 <div id="modal" class="modal-bg" onclick="closeModal()">
   <div class="modal-content" onclick="event.stopPropagation()">
     <div class="close-btn" onclick="closeModal()">✖</div>
+
+    <img id="modal-img" src="" alt="Cartita" style="width:100%; border-radius:12px; margin-bottom:16px;">
+
     <div id="modal-text"></div>
   </div>
 </div>
 
 <script>
 const cartitas = {
-  cartita1: "Desde que llegaste a mi vidjijia, todo tiene un brillo distinto. Esta cartita es solo un pequeño reflejo de lo que siento.",
-  cartita2: "Gracias por existir, por quedarte y por ser exactamente como eres. Mi cariño por ti vive en cada palabra.",
-  cartita3: "Si algún día dudas de ti, vuelve a leer esto: eres querido, eres importante y eres muy especial para mí."
+  cartita1: {
+    texto: "Desde que llegaste a mi vida, todo se siente más bonito.",
+    imagen: "sobre1.jpg"
+  },
+  cartita2: {
+    texto: "Gracias por quedarte, por ser luz y calma al mismo tiempo.",
+    imagen: "sobre2.jpg"
+  },
+  cartita3: {
+    texto: "Si algún día dudas, vuelve aquí y recuerda cuánto te quiero.",
+    imagen: "sobre3.jpg"
+  }
 };
 
 function openModal(key) {
-  document.getElementById('modal-text').innerText = cartitas[key];
+  document.getElementById('modal-text').innerText = cartitas[key].texto;
+  document.getElementById('modal-img').src = cartitas[key].imagen;
   document.getElementById('modal').style.display = 'flex';
 }
 
