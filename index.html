@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Cartitas Interactivas</title>
+
+<!-- Fuente romántica -->
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    font-family: 'Simonetta', serif;
+    background: #fdf2f8;
+    text-align: center;
+    padding: 40px;
+    color: #4a2c3a;
+  }
+
+  h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 42px;
+  }
+
+  .cards-container {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    background: white;
+    border-radius: 12px;
+    width: 140px;
+    padding: 20px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    transition: transform .2s;
+  }
+
+  .card:hover {
+    transform: scale(1.07);
+  }
+
+  .card-icon {
+    font-size: 40px;
+  }
+
+  .modal-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.6);
+    display:none;
+    justify-content:center;
+    align-items:center;
+  }
+
+  .modal-content {
+    background:white;
+    padding: 28px;
+    border-radius:12px;
+    max-width: 480px;
+    text-align:left;
+    position: relative;
+    font-family: 'Dancing Script', cursive;
+    font-size: 22px;
+    line-height: 1.6;
+  }
+
+  .close-btn {
+    position: absolute;
+    right: 14px;
+    top: 10px;
+    cursor: pointer;
+    font-size: 22px;
+  }
+</style>
+</head>
+
+<body>
+
+<h1>📩 Mis Cartitas</h1>
+
+<div class="cards-container">
+  <div class="card" onclick="openModal('cartita1')">
+    <div class="card-icon">💌</div>
+    <div>abrela ahorita</div>
+  </div>
+  <div class="card" onclick="openModal('cartita2')">
+    <div class="card-icon">💌</div>
+    <div>abre cuando... estes feliz</div>
+  </div>
+  <div class="card" onclick="openModal('cartita3')">
+    <div class="card-icon">💌</div>
+    <div>abre cuando... estes triste</div>
+  </div>
+  <div class="card" onclick="openModal('cartita3')">
+    <div class="card-icon">💌</div>
+    <div>abre cuando... me extrañes</div>
+  </div>
+  <div class="card" onclick="openModal('cartita3')">
+    <div class="card-icon">💌</div>
+    <div>abre cuando... sientas que no eres suficiente</div>
+  </div>
+  <div class="card" onclick="openModal('cartita3')">
+    <div class="card-icon">💌</div>
+    <div>abre cuando... tengas un mal dia</div>
+  </div>
+  <div class="card" onclick="openModal('cartita3')">
+    <div class="card-icon">💌</div>
+    <div>abre cuando... necesites motivacion</div>
+  </div>
+  <div class="card" onclick="openModal('cartita3')">
+    <div class="card-icon">💌</div>
+    <div>abre cuando... te sientas solo</div>
+  </div>
+</div>
+
+<div id="modal" class="modal-bg" onclick="closeModal()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <div class="close-btn" onclick="closeModal()">✖</div>
+    <div id="modal-text"></div>
+  </div>
+</div>
+
+<script>
+const cartitas = {
+  cartita1: "Desde que llegaste a mi vida, todo tiene un brillo distinto. Esta cartita es solo un pequeño reflejo de lo que siento.",
+  cartita2: "Gracias por existir, por quedarte y por ser exactamente como eres. Mi cariño por ti vive en cada palabra.",
+  cartita3: "Si algún día dudas de ti, vuelve a leer esto: eres querido, eres importante y eres muy especial para mí."
+};
+
+function openModal(key) {
+  document.getElementById('modal-text').innerText = cartitas[key];
+  document.getElementById('modal').style.display = 'flex';
+}
+
+function closeModal() {
+  document.getElementById('modal').style.display = 'none';
+}
+</script>
+
+</body>
+</html>
