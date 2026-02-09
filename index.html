@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
 
   <style>
     body {
@@ -32,16 +34,18 @@
 
     .cards {
       display: flex;
-      gap: 20px;
       flex-wrap: wrap;
+      gap: 20px;
       justify-content: center;
     }
 
     .card {
       background: white;
       border-radius: 16px;
-      width: 140px;
-      height: 160px;
+      width: 100%;
+      max-width: 160px;
+      height: 150px;
+      margin: auto;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -76,10 +80,10 @@
 
     .modal-content {
       background: white;
-      padding: 30px;
+      padding: 34px;
       border-radius: 18px;
-      max-width: 480px;
-      width: 90%;
+      max-width: 420px;
+      width: 92%;
       text-align: center;
       animation: scaleIn 0.3s ease;
       position: relative;
@@ -99,15 +103,19 @@
     }
 
     #modal-text {
-      font-size: 22px;
-      line-height: 1.7;
-      color: #444;
+      font-family: 'Shadows Into Light', cursive;
+      font-size: clamp(15px, 3.8vw, 20px);
+      line-height: 1.9;
+      color: #5a3b45;
       white-space: pre-wrap; /* respeta saltos de línea */
     }
 
-    @media (max-width: 600px) {
-      h1 { font-size: 36px; }
-      #modal-text { font-size: 20px; }
+    @media (max-width: 400px) {
+      h1 { font-size: 32px; }
+
+      .card{
+        height :130px;
+      }
     }
   </style>
 </head>
@@ -115,7 +123,7 @@
 <body>
 
   <div class="container">
-    <h1>Para Ti 💕</h1>
+    <h1>Holiis💕</h1>
 
     <div class="cards">
       <div class="card" onclick="openModal('c1')">
@@ -131,6 +139,26 @@
       <div class="card" onclick="openModal('c3')">
         <div class="card-icon">💌</div>
         Cartita 3
+      </div>
+      <div class="card" onclick="openModal('c2')">
+        <div class="card-icon">💌</div>
+        Cartita 4
+      </div>
+      <div class="card" onclick="openModal('c2')">
+        <div class="card-icon">💌</div>
+        Cartita 5
+      </div>
+      <div class="card" onclick="openModal('c2')">
+        <div class="card-icon">💌</div>
+       
+      </div>
+      <div class="card" onclick="openModal('c2')">
+        <div class="card-icon">💌</div>
+        Cartita 7
+      </div>
+      <div class="card" onclick="openModal('c2')">
+        <div class="card-icon">💌</div>
+        Cartita 8
       </div>
     </div>
   </div>
