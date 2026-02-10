@@ -20,25 +20,25 @@
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        padding-top: 5px;
+        padding-top: 1px;
       }
 
       h1 {
         font-family: "Handlee", cursive;
-        font-size: 32px;
+        font-size: 28px;
         color: #c94f7c;
         margin-bottom: 30px;
       }
 
-      .container { text-align: center; padding: 20px; }
+      .container { text-align: center; padding: 10px; }
 
       /* Grid con 4 columnas siempre */
       .cards {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+        grid-template-columns: repeat(3, 1fr);
         gap: 15px;
         justify-items: center;
-        max-width: 420px; /* ancho total para 3 columnas */
+        max-width: 420px; /* ancho total para 4 columnas */
         margin: auto;
       }
 
@@ -59,8 +59,8 @@
       }
 
       .card.opened {
-        background: #fcd0e0; /* Color al abrir */
-        color: #8b1e4f;       /* Color del texto al abrir */
+        background: #faf5f6; /* Color al abrir */
+        color: #0f0f0f;       /* Color del texto al abrir */
       }
 
       .card:hover { transform: translateY(-6px); }
@@ -101,7 +101,7 @@
 
       #modal-text {
         font-family: "Handlee", cursive;
-        font-size: clamp(15px, 3.8vw, 20px);
+        font-size: clamp(13px, 3.8vw, 18px);
         line-height: 1.9;
         color: #5a3b45;
         white-space: pre-wrap;
@@ -129,13 +129,26 @@
 
       <div class="cards">
         <!-- Cartitas -->
-        <div class="card" onclick="openModal('abrela_ahora', this)">
+        <div class="card" onclick="openModal('abrela_ahorita', this)">
           <div class="card-icon">💌</div>
           Ábrela ahorita...
         </div>
+         <div class="card" onclick="openModal('me_extrañes', this)">
+          <div class="card-icon">💌</div>
+          Ábrela cuando... me extrañes.
+        </div>
+         
         <div class="card" onclick="openModal('te_sientas_triste', this)">
           <div class="card-icon">💌</div>
           Ábrela cuando... te sientas triste.
+        </div>
+        <div class="card" onclick="openModal('recuerdes_nuestro_primer_beso', this)">
+          <div class="card-icon">💌</div>
+          Ábrela cuando... recuerdes nuestro primer beso.
+        </div>
+        <div class="card" onclick="openSongModal()">
+          <div class="card-icon">💌</div>
+          Ábrela cuando quieras escuchar una canción.
         </div>
         <div class="card" onclick="openModal('tengas_un_mal_dia', this)">
           <div class="card-icon">💌</div>
@@ -161,6 +174,10 @@
           <div class="card-icon">💌</div>
           Ábrela cuando... estes aburrido.
         </div>
+         <div class="card" onclick="openModal('quieras_ver_algo_gracioso', this)">
+          <div class="card-icon">💌</div>
+          Ábrela cuando quieras ver algo gracioso.
+        </div>
         <div class="card" onclick="openModal('estes_enojado_conmigo', this)">
           <div class="card-icon">💌</div>
           Ábrela cuando... estes enojado conmigo.
@@ -169,16 +186,35 @@
           <div class="card-icon">💌</div>
           Ábrela cuando... necesites un impulso de confianza.
         </div>
-        
-        <div class="card" onclick="openModal('c2', this)">
+         <div class="card" onclick="openModal('te_sientas_enamorado', this)">
           <div class="card-icon">💌</div>
-          Ábrela al final
+          Ábrela cuando... te sientas enamorado.
         </div>
-
-        <div class="card" onclick="openSongModal()">
-          <div class="card-icon">🎶</div>
-          Canción
+         <div class="card" onclick="openModal('necesites_un_chiste_tonto', this)">
+          <div class="card-icon">💌</div>
+          Ábrela cuando... necesites un chiste tonto.
         </div>
+        <div class="card" onclick="openModal('estes_llorando', this)">
+          <div class="card-icon">💌</div>
+          Ábrela cuando... estes llorando.
+        </div>
+        <div class="card" onclick="openModal('dudes_de_tus_decisiones', this)">
+          <div class="card-icon">💌</div>
+          Ábrela cuando... dudes de tus decisiones.
+        </div>
+         <div class="card" onclick="openModal('creas_que_hice_algo_mal', this)">
+          <div class="card-icon">💌</div>
+          Ábrela cuando... creas que hice algo mal.
+        </div>
+        <div class="card" onclick="openModal('te_amo', this)">
+          <div class="card-icon">💌</div>
+          Ábrela cuando... te preguntes por que te amo
+        </div>
+        <div class="card" onclick="openModal('termines_todo', this)">
+          <div class="card-icon">💌</div>
+          Ábrela cuando... allas terminado de leer todas.
+        </div>
+       
 
         <!-- Modal canción -->
         <div id="song-modal" class="modal-bg" onclick="closeSongModal()">
@@ -248,3 +284,4 @@
     </script>
   </body>
 </html>
+
