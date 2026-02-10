@@ -27,7 +27,7 @@
         display: flex;
         justify-content: center;
         align-items: flex-start; /* ← ahora se van arriba */
-        padding-top: 30px; 
+        padding-top: 30px;
       }
 
       h1 {
@@ -54,8 +54,8 @@
       .card {
         background: white;
         border-radius: 16px;
-        width: 100px;
-        height: 105px;
+        width: 110px;
+        height: 145px;
         margin: auto;
         display: flex;
         flex-direction: column;
@@ -66,7 +66,6 @@
         transition: transform 0.3s;
         font-size: 13px;
       }
-
       .card:hover {
         transform: translateY(-6px);
       }
@@ -75,6 +74,7 @@
         font-size: 40px;
         margin-bottom: 10px;
       }
+      
 
       /* MODAL */
       .modal-bg {
@@ -150,7 +150,7 @@
         .card {
           height: 130px;
         }
-        .cards{
+        .cards {
           max-width: 350px;
         }
       }
@@ -159,30 +159,46 @@
 
   <body>
     <div class="container">
-      <h1>Holis💕</h1>
+      <h1>Holis Amor...</h1>
 
       <div class="cards">
-        <div class="card" onclick="openModal('c1')">
+        <div class="card" onclick="openModal('te_sientas_triste')">
           <div class="card-icon">💌</div>
-          Cartita 1
+          Ábrela cuando... te sientas triste.
         </div>
 
-        <div class="card" onclick="openModal('c2')">
+        <div class="card" onclick="openModal('tengas_un_mal_dia')">
           <div class="card-icon">💌</div>
-          Cartita 2
+          Ábrela cuando... tengas un mal dia.
         </div>
 
-        <div class="card" onclick="openModal('c3')">
+        <div class="card" onclick="openModal('necesites_una_sonrisa')">
           <div class="card-icon">💌</div>
-          Cartita 3
+          Ábrela cuando... necesites una sonrisa.
         </div>
-        <div class="card" onclick="openModal('c2')">
+        <div class="card" onclick="openModal('estes_feliz')">
           <div class="card-icon">💌</div>
-          Cartita 4
+          Ábrela cuando... estes feliz.
         </div>
-        <div class="card" onclick="openModal('c2')">
+        <div class="card" onclick="openModal('te_sientes_solo')">
           <div class="card-icon">💌</div>
-          Cartita 5
+          Ábrela cuando... te sientas solo.
+        </div>
+        <div class="card" onclick="openModal('no_puedas_dormir')">
+          <div class="card-icon">💌</div>
+          Ábrela cuando... no puedas dormir.
+        </div>
+        <div class="card" onclick="openModal('estes_aburrido')">
+          <div class="card-icon">💌</div>
+          Ábrela cuando... estes aburrido.
+        </div>
+        <div class="card" onclick="openModal('estes_enojado_conmigo')">
+          <div class="card-icon">💌</div>
+          Ábrela cuando... estes enojado conmigo.
+        </div>
+        <div class="card" onclick="openModal('necesites_un_impulso_de_confianza')">
+          <div class="card-icon">💌</div>
+          Ábrela cuando... necesites un impulso de confianza.
         </div>
         <div class="card" onclick="openModal('c2')">
           <div class="card-icon">💌</div>
@@ -262,6 +278,8 @@
       function closeSongModal() {
         document.getElementById("song-modal").style.display = "none";
       }
+
+    
     </script>
   </body>
 </html>
