@@ -5,16 +5,12 @@
     <title>Mis Cartitas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Fuentes -->
+    <!-- Fuente Just Another Hand -->
+    <link href="https://fonts.cdnfonts.com/css/just-another-hand" rel="stylesheet">
     <link
       href="https://fonts.googleapis.com/css2?family=Handlee&display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.cdnfonts.com/css/just-another-hand"
-      rel="stylesheet"
-    />
-
     <style>
       body {
         margin: 0;
@@ -34,62 +30,48 @@
         margin-bottom: 30px;
       }
 
-      .container {
-        text-align: center;
-        padding: 20px;
-      }
+      .container { text-align: center; padding: 20px; }
 
+      /* Grid con 4 columnas siempre */
       .cards {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 columnas */
         gap: 15px;
-        justify-content: center;
-        max-width: 500px;
+        justify-items: center;
+        max-width: 500px; /* ancho total para 4 columnas */
         margin: auto;
       }
 
       .card {
         background: white;
         border-radius: 16px;
-        width: 22w;
-        max-width:110px;
-        height: 105px;
-        margin: auto;
+        width: 22vw;        /* 4 columnas aproximadas en móvil */
+        max-width: 110px;   /* no crece demasiado en escritorio */
+        height: 145px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         cursor: pointer;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        transition:
-          transform 0.3s,
-          background 0.3s,
-          color 0.3s;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        transition: transform 0.3s, background 0.3s, color 0.3s;
         font-size: 12px;
       }
 
       .card.opened {
         background: #fcd0e0; /* Color al abrir */
-        color: #8b1e4f; /* Color del texto al abrir */
+        color: #8b1e4f;       /* Color del texto al abrir */
       }
 
-      .card:hover {
-        transform: translateY(-6px);
-      }
-
-      .card-icon {
-        font-size: 40px;
-        margin-bottom: 10px;
-      }
+      .card:hover { transform: translateY(-6px); }
+      .card-icon { font-size: 40px; margin-bottom: 10px; }
 
       /* MODAL */
       .modal-bg {
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.5);
         backdrop-filter: blur(6px);
         display: none;
         justify-content: center;
@@ -108,27 +90,18 @@
       }
 
       @keyframes scaleIn {
-        from {
-          transform: scale(0.9);
-          opacity: 0;
-        }
-        to {
-          transform: scale(1);
-          opacity: 1;
-        }
+        from { transform: scale(0.9); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
       }
 
       .close-btn {
-        position: absolute;
-        top: 12px;
-        right: 16px;
-        cursor: pointer;
-        font-size: 18px;
+        position: absolute; top: 12px; right: 16px;
+        cursor: pointer; font-size: 18px;
       }
 
       #modal-text {
         font-family: "Handlee", cursive;
-        font-size: clamp(13px, 3.8vw, 18px);
+        font-size: clamp(15px, 3.8vw, 20px);
         line-height: 1.9;
         color: #5a3b45;
         white-space: pre-wrap;
@@ -145,21 +118,8 @@
         font-size: 16px;
       }
 
-      .song-link:hover {
-        background: #a83e66;
-      }
+      .song-link:hover { background: #a83e66; }
 
-      @media (max-width: 600px) {
-        h1 {
-          font-size: 32px;
-        }
-        .card {
-          height: 130px;
-        }
-        .cards {
-          max-width: 350px;
-        }
-      }
     </style>
   </head>
 
@@ -169,7 +129,7 @@
 
       <div class="cards">
         <!-- Cartitas -->
-        <div class="card" onclick="openModal('abrela_ahora', this)">
+        <div class="card" onclick="openModal('c2', this)">
           <div class="card-icon">💌</div>
           Ábrela ahorita...
         </div>
@@ -205,14 +165,11 @@
           <div class="card-icon">💌</div>
           Ábrela cuando... estes enojado conmigo.
         </div>
-        <div
-          class="card"
-          onclick="openModal('necesites_un_impulso_de_confianza', this)"
-        >
+        <div class="card" onclick="openModal('necesites_un_impulso_de_confianza', this)">
           <div class="card-icon">💌</div>
           Ábrela cuando... necesites un impulso de confianza.
         </div>
-
+        
         <div class="card" onclick="openModal('c2', this)">
           <div class="card-icon">💌</div>
           Ábrela al final
@@ -227,21 +184,12 @@
         <div id="song-modal" class="modal-bg" onclick="closeSongModal()">
           <div class="modal-content" onclick="event.stopPropagation()">
             <div class="close-btn" onclick="closeSongModal()">✖</div>
-            <h2
-              style="
-                font-family: &quot;Just Another Hand&quot;, cursive;
-                color: #c94f7c;
-              "
-            >
-              Mira escuche esta canción ya vez que anda de moda el conejo
-              malo... Jejeje asi que quiero que la escuches por que es de mi
-              para ti.
+            <h2 style="font-family: 'Just Another Hand', cursive; color: #c94f7c;">
+              Mira escuche esta canción ya vez que anda de moda el conejo malo... Jejeje asi que quiero que la escuches por que es de mi para ti.
             </h2>
-            <a
-              href="https://open.spotify.com/track/5WEF0icHWmAZBBMglBd599?si=Ls3sgoqbT0CRtutOhnv5IQ&context=spotify%3Aplaylist%3A37i9dQZF1DX2apWzyECwyZ"
-              target="_blank"
-              class="song-link"
-            >
+            <a href="https://open.spotify.com/track/5WEF0icHWmAZBBMglBd599?si=Ls3sgoqbT0CRtutOhnv5IQ&context=spotify%3Aplaylist%3A37i9dQZF1DX2apWzyECwyZ"
+               target="_blank"
+               class="song-link">
               Escuchar canción 🎧
             </a>
           </div>
@@ -258,63 +206,45 @@
     </div>
 
     <script>
+      // Abrir modal y guardar cartita abierta
       function openModal(key, cardElement) {
         const modalText = document.getElementById("modal-text");
         modalText.innerText = "Cargando...";
         document.getElementById("modal").style.display = "flex";
 
-        // Cambia el color de la cartita
         cardElement.classList.add("opened");
-        // Guardamos en localStorage que esta cartita ya se abrió
-        let openedCards = JSON.parse(
-          localStorage.getItem("openedCards") || "[]",
-        );
+
+        let openedCards = JSON.parse(localStorage.getItem("openedCards") || "[]");
         if (!openedCards.includes(key)) {
           openedCards.push(key);
           localStorage.setItem("openedCards", JSON.stringify(openedCards));
         }
 
         fetch(key + ".txt")
-          .then((response) => {
+          .then(response => {
             if (!response.ok) throw new Error("No encontrado");
             return response.text();
           })
-          .then((text) => {
-            modalText.innerText = text;
-          })
-          .catch(() => {
-            modalText.innerText = "No se pudo cargar la cartita 💔";
-          });
+          .then(text => modalText.innerText = text)
+          .catch(() => modalText.innerText = "No se pudo cargar la cartita 💔");
       }
+
+      function closeModal() { document.getElementById("modal").style.display = "none"; }
+      function openSongModal() { document.getElementById("song-modal").style.display = "flex"; }
+      function closeSongModal() { document.getElementById("song-modal").style.display = "none"; }
+
+      // Mantener color de cartitas abiertas
       window.addEventListener("DOMContentLoaded", () => {
-        const openedCards = JSON.parse(
-          localStorage.getItem("openedCards") || "[]",
-        );
-
-        // Recorremos todas las cartitas y les ponemos la clase opened si ya se abrieron
-        document.querySelectorAll(".card").forEach((card) => {
-          const onclickAttr = card.getAttribute("onclick"); // "openModal('key', this)"
+        const openedCards = JSON.parse(localStorage.getItem("openedCards") || "[]");
+        document.querySelectorAll(".card").forEach(card => {
+          const onclickAttr = card.getAttribute("onclick");
           if (!onclickAttr) return;
-
-          // Extraemos la key del onclick
           const match = onclickAttr.match(/openModal\('([^']+)'/);
           if (match && openedCards.includes(match[1])) {
             card.classList.add("opened");
           }
         });
       });
-
-      function closeModal() {
-        document.getElementById("modal").style.display = "none";
-      }
-
-      function openSongModal() {
-        document.getElementById("song-modal").style.display = "flex";
-      }
-
-      function closeSongModal() {
-        document.getElementById("song-modal").style.display = "none";
-      }
     </script>
   </body>
 </html>
