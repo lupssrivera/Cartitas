@@ -17,6 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Handlee&display=swap"
       rel="stylesheet"
     />
+    <link href="https://fonts.cdnfonts.com/css/just-another-hand" rel="stylesheet">
 
     <style>
       body {
@@ -27,12 +28,12 @@
         display: flex;
         justify-content: center;
         align-items: flex-start; /* ← ahora se van arriba */
-        padding-top: 30px;
+        padding-top: 5px;
       }
 
       h1 {
         font-family: "Handlee", cursive;
-        font-size: 32px;
+        font-size: 32;
         color: #c94f7c;
         margin-bottom: 30px;
       }
@@ -54,8 +55,8 @@
       .card {
         background: white;
         border-radius: 16px;
-        width: 100px;
-        height: 105px;
+        width: 110px;
+        height: 145px;
         margin: auto;
         display: flex;
         flex-direction: column;
@@ -64,7 +65,7 @@
         cursor: pointer;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         transition: transform 0.3s;
-        font-size: 13px;
+        font-size: 12px;
       }
       .card:hover {
         transform: translateY(-6px);
@@ -159,9 +160,13 @@
 
   <body>
     <div class="container">
-      <h1>Con todo mi amor para ti </h1>
+      <h1>Con todo mi amor para ti...</h1>
 
       <div class="cards">
+        <div class="card" onclick="openModal('c2')">
+          <div class="card-icon">💌</div>
+          Ábrela ahorita...
+        </div>
         <div class="card" onclick="openModal('te_sientas_triste')">
           <div class="card-icon">💌</div>
           Ábrela cuando... te sientas triste.
@@ -200,16 +205,10 @@
           <div class="card-icon">💌</div>
           Ábrela cuando... necesites un impulso de confianza.
         </div>
+        
         <div class="card" onclick="openModal('c2')">
           <div class="card-icon">💌</div>
-        </div>
-        <div class="card" onclick="openModal('c2')">
-          <div class="card-icon">💌</div>
-          Cartita 7
-        </div>
-        <div class="card" onclick="openModal('c2')">
-          <div class="card-icon">💌</div>
-          Cartita 8
+          Ábrela al final
         </div>
         <div class="card" onclick="openSongModal()">
           <div class="card-icon">🎶</div>
@@ -222,14 +221,14 @@
 
             <h2
               style="
-                font-family: &quot;Great Vibes&quot;, cursive;
+                font-family: 'Just Another Hand', cursive;
                 color: #c94f7c;
               "
             >
-              Ame
+              Mira escuche esta canción ya vez que anda de moda el conejo malo... Jejeje asi que quiero que la escuches por que es de mi para ti.
             </h2>
             <a
-              href="https://open.spotify.com/track/2edb2SIakC6HADUz6s34hS?si=q7k2ShDqS6KtIl0h0emT6Q"
+              href="https://open.spotify.com/track/5WEF0icHWmAZBBMglBd599?si=Ls3sgoqbT0CRtutOhnv5IQ&context=spotify%3Aplaylist%3A37i9dQZF1DX2apWzyECwyZ"
               target="_blank"
               class="song-link"
             >
@@ -283,4 +282,5 @@
     </script>
   </body>
 </html>
+
 
