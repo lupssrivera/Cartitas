@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>Mis Cartitas 💌</title>
+    <title>Mis Cartitas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link
@@ -14,23 +14,24 @@
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Handlee&display=swap"
       rel="stylesheet"
     />
 
     <style>
       body {
         margin: 0;
-        font-family: "Poppins", sans-serif;
+        font-family: "Handlee", cursive;
         background: linear-gradient(135deg, #ffd6e8, #fff);
         min-height: 100vh;
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start; /* ← ahora se van arriba */
+        padding-top: 30px; 
       }
 
       h1 {
-        font-family: "Poppins", sans-serif;
+        font-family: "Handlee", cursive;
         font-size: 48px;
         color: #c94f7c;
         margin-bottom: 30px;
@@ -120,7 +121,7 @@
       }
 
       #modal-text {
-        font-family: "Shadows Into Light", cursive;
+        font-family: "Handlee", cursive;
         font-size: clamp(15px, 3.8vw, 20px);
         line-height: 1.9;
         color: #5a3b45;
@@ -151,18 +152,19 @@
         }
         .cards{
           max-width: 350px;
+        }
       }
     </style>
   </head>
 
   <body>
     <div class="container">
-      <h1>Holiis💕</h1>
+      <h1>Holis💕</h1>
 
       <div class="cards">
         <div class="card" onclick="openModal('c1')">
           <div class="card-icon">💌</div>
-          Cartita 1 cambio
+          Cartita 1
         </div>
 
         <div class="card" onclick="openModal('c2')">
@@ -263,3 +265,4 @@
     </script>
   </body>
 </html>
+
