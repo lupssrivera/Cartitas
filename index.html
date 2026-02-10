@@ -51,9 +51,9 @@
       .card {
         background: white;
         border-radius: 16px;
-        width: 100%;
+        width: 110px;
         max-width: 160px;
-        height: 150px;
+        height: 110px;
         margin: auto;
         display: flex;
         flex-direction: column;
@@ -62,6 +62,7 @@
         cursor: pointer;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         transition: transform 0.3s;
+        font-size: 14px;
       }
 
       .card:hover {
@@ -215,23 +216,6 @@
             </a>
           </div>
         </div>
-        <div class="card" onclick="openVideoModal()">
-          <div class="card-icon">🎥</div>
-          Video
-        </div>
-        <div id="video-modal" class="modal-bg" onclick="closeVideoModal()">
-  <div class="modal-content" onclick="event.stopPropagation()">
-
-    <div class="close-btn" onclick="closeVideoModal()">✖</div>
-
-    <video id="myVideo" width="100%" controls>
-      <source src="video.mp4" type="video/mp4">
-      Tu navegador no soporta video
-    </video>
-
-  </div>
-</div>
-
       </div>
     </div>
 
@@ -272,13 +256,6 @@
 
       function closeSongModal() {
         document.getElementById("song-modal").style.display = "none";
-      }
-      function openVideoModal() {
-        document.getElementById("video-modal").style.display = "flex";
-      }
-
-      function closeVideoModal() {
-        document.getElementById("video-modal").style.display = "none";
       }
     </script>
   </body>
