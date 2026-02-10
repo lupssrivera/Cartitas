@@ -5,19 +5,15 @@
     <title>Mis Cartitas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Fuentes -->
     <link
       href="https://fonts.googleapis.com/css2?family=Handlee&display=swap"
       rel="stylesheet"
     />
-    <link href="https://fonts.cdnfonts.com/css/just-another-hand" rel="stylesheet">
+    <link
+      href="https://fonts.cdnfonts.com/css/just-another-hand"
+      rel="stylesheet"
+    />
 
     <style>
       body {
@@ -27,13 +23,13 @@
         min-height: 100vh;
         display: flex;
         justify-content: center;
-        align-items: flex-start; /* ← ahora se van arriba */
+        align-items: flex-start;
         padding-top: 5px;
       }
 
       h1 {
         font-family: "Handlee", cursive;
-        font-size: 32;
+        font-size: 32px;
         color: #c94f7c;
         margin-bottom: 30px;
       }
@@ -48,15 +44,15 @@
         flex-wrap: wrap;
         gap: 15px;
         justify-content: center;
-        max-width: 380px; /* esto obliga a que se acomoden de 3 */
+        max-width: 380px;
         margin: auto;
       }
 
       .card {
         background: white;
         border-radius: 16px;
-        width: 100px;
-        height: 105px;
+        width: 110px;
+        height: 145px;
         margin: auto;
         display: flex;
         flex-direction: column;
@@ -64,9 +60,18 @@
         align-items: center;
         cursor: pointer;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        transition: transform 0.3s;
+        transition:
+          transform 0.3s,
+          background 0.3s,
+          color 0.3s;
         font-size: 12px;
       }
+
+      .card.opened {
+        background: #fcd0e0; /* Color al abrir */
+        color: #8b1e4f; /* Color del texto al abrir */
+      }
+
       .card:hover {
         transform: translateY(-6px);
       }
@@ -75,7 +80,6 @@
         font-size: 40px;
         margin-bottom: 10px;
       }
-      
 
       /* MODAL */
       .modal-bg {
@@ -123,11 +127,12 @@
 
       #modal-text {
         font-family: "Handlee", cursive;
-        font-size: clamp(15px, 3.8vw, 20px);
+        font-size: clamp(13px, 3.8vw, 18px);
         line-height: 1.9;
         color: #5a3b45;
-        white-space: pre-wrap; /* respeta saltos de línea */
+        white-space: pre-wrap;
       }
+
       .song-link {
         display: inline-block;
         margin-top: 20px;
@@ -147,7 +152,6 @@
         h1 {
           font-size: 32px;
         }
-
         .card {
           height: 130px;
         }
@@ -163,69 +167,74 @@
       <h1>Con todo mi amor para ti...</h1>
 
       <div class="cards">
-        <div class="card" onclick="openModal('c2')">
+        <!-- Cartitas -->
+        <div class="card" onclick="openModal('c2', this)">
           <div class="card-icon">💌</div>
           Ábrela ahorita...
         </div>
-        <div class="card" onclick="openModal('te_sientas_triste')">
+        <div class="card" onclick="openModal('te_sientas_triste', this)">
           <div class="card-icon">💌</div>
           Ábrela cuando... te sientas triste.
         </div>
-
-        <div class="card" onclick="openModal('tengas_un_mal_dia')">
+        <div class="card" onclick="openModal('tengas_un_mal_dia', this)">
           <div class="card-icon">💌</div>
           Ábrela cuando... tengas un mal dia.
         </div>
-
-        <div class="card" onclick="openModal('necesites_una_sonrisa')">
+        <div class="card" onclick="openModal('necesites_una_sonrisa', this)">
           <div class="card-icon">💌</div>
           Ábrela cuando... necesites una sonrisa.
         </div>
-        <div class="card" onclick="openModal('estes_feliz')">
+        <div class="card" onclick="openModal('estes_feliz', this)">
           <div class="card-icon">💌</div>
           Ábrela cuando... estes feliz.
         </div>
-        <div class="card" onclick="openModal('te_sientes_solo')">
+        <div class="card" onclick="openModal('te_sientes_solo', this)">
           <div class="card-icon">💌</div>
           Ábrela cuando... te sientas solo.
         </div>
-        <div class="card" onclick="openModal('no_puedas_dormir')">
+        <div class="card" onclick="openModal('no_puedas_dormir', this)">
           <div class="card-icon">💌</div>
           Ábrela cuando... no puedas dormir.
         </div>
-        <div class="card" onclick="openModal('estes_aburrido')">
+        <div class="card" onclick="openModal('estes_aburrido', this)">
           <div class="card-icon">💌</div>
           Ábrela cuando... estes aburrido.
         </div>
-        <div class="card" onclick="openModal('estes_enojado_conmigo')">
+        <div class="card" onclick="openModal('estes_enojado_conmigo', this)">
           <div class="card-icon">💌</div>
           Ábrela cuando... estes enojado conmigo.
         </div>
-        <div class="card" onclick="openModal('necesites_un_impulso_de_confianza')">
+        <div
+          class="card"
+          onclick="openModal('necesites_un_impulso_de_confianza', this)"
+        >
           <div class="card-icon">💌</div>
           Ábrela cuando... necesites un impulso de confianza.
         </div>
-        
-        <div class="card" onclick="openModal('c2')">
+
+        <div class="card" onclick="openModal('c2', this)">
           <div class="card-icon">💌</div>
           Ábrela al final
         </div>
+
         <div class="card" onclick="openSongModal()">
           <div class="card-icon">🎶</div>
           Canción
         </div>
 
+        <!-- Modal canción -->
         <div id="song-modal" class="modal-bg" onclick="closeSongModal()">
           <div class="modal-content" onclick="event.stopPropagation()">
             <div class="close-btn" onclick="closeSongModal()">✖</div>
-
             <h2
               style="
-                font-family: 'Just Another Hand', cursive;
+                font-family: &quot;Just Another Hand&quot;, cursive;
                 color: #c94f7c;
               "
             >
-              Mira escuche esta canción ya vez que anda de moda el conejo malo... Jejeje asi que quiero que la escuches por que es de mi para ti.
+              Mira escuche esta canción ya vez que anda de moda el conejo
+              malo... Jejeje asi que quiero que la escuches por que es de mi
+              para ti.
             </h2>
             <a
               href="https://open.spotify.com/track/5WEF0icHWmAZBBMglBd599?si=Ls3sgoqbT0CRtutOhnv5IQ&context=spotify%3Aplaylist%3A37i9dQZF1DX2apWzyECwyZ"
@@ -248,10 +257,21 @@
     </div>
 
     <script>
-      function openModal(key) {
+      function openModal(key, cardElement) {
         const modalText = document.getElementById("modal-text");
         modalText.innerText = "Cargando...";
         document.getElementById("modal").style.display = "flex";
+
+        // Cambia el color de la cartita
+        cardElement.classList.add("opened");
+        // Guardamos en localStorage que esta cartita ya se abrió
+        let openedCards = JSON.parse(
+          localStorage.getItem("openedCards") || "[]",
+        );
+        if (!openedCards.includes(key)) {
+          openedCards.push(key);
+          localStorage.setItem("openedCards", JSON.stringify(openedCards));
+        }
 
         fetch(key + ".txt")
           .then((response) => {
@@ -265,6 +285,23 @@
             modalText.innerText = "No se pudo cargar la cartita 💔";
           });
       }
+      window.addEventListener("DOMContentLoaded", () => {
+        const openedCards = JSON.parse(
+          localStorage.getItem("openedCards") || "[]",
+        );
+
+        // Recorremos todas las cartitas y les ponemos la clase opened si ya se abrieron
+        document.querySelectorAll(".card").forEach((card) => {
+          const onclickAttr = card.getAttribute("onclick"); // "openModal('key', this)"
+          if (!onclickAttr) return;
+
+          // Extraemos la key del onclick
+          const match = onclickAttr.match(/openModal\('([^']+)'/);
+          if (match && openedCards.includes(match[1])) {
+            card.classList.add("opened");
+          }
+        });
+      });
 
       function closeModal() {
         document.getElementById("modal").style.display = "none";
@@ -277,10 +314,6 @@
       function closeSongModal() {
         document.getElementById("song-modal").style.display = "none";
       }
-
-    
     </script>
   </body>
 </html>
-
-
