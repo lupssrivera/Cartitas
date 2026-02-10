@@ -1,200 +1,285 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Mis Cartitas 💌</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mis Cartitas 💌</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap"
+      rel="stylesheet"
+    />
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #ffd6e8, #fff);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 48px;
-      color: #c94f7c;
-      margin-bottom: 30px;
-    }
-
-    .container {
-      text-align: center;
-      padding: 20px;
-    }
-
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-
-    .card {
-      background: white;
-      border-radius: 16px;
-      width: 100%;
-      max-width: 160px;
-      height: 150px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      transition: transform 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-    }
-
-    .card-icon {
-      font-size: 40px;
-      margin-bottom: 10px;
-    }
-
-    /* MODAL */
-    .modal-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width:100%;
-      height:100%;
-      background: rgba(0,0,0,0.5);
-      backdrop-filter: blur(6px);
-      display:none;
-      justify-content:center;
-      align-items:center;
-    }
-
-    .modal-content {
-      background: white;
-      padding: 34px;
-      border-radius: 18px;
-      max-width: 420px;
-      width: 92%;
-      text-align: center;
-      animation: scaleIn 0.3s ease;
-      position: relative;
-    }
-
-    @keyframes scaleIn {
-      from { transform: scale(0.9); opacity: 0; }
-      to   { transform: scale(1); opacity: 1; }
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 12px;
-      right: 16px;
-      cursor: pointer;
-      font-size: 18px;
-    }
-
-    #modal-text {
-      font-family: 'Shadows Into Light', cursive;
-      font-size: clamp(15px, 3.8vw, 20px);
-      line-height: 1.9;
-      color: #5a3b45;
-      white-space: pre-wrap; /* respeta saltos de línea */
-    }
-
-    @media (max-width: 400px) {
-      h1 { font-size: 32px; }
-
-      .card{
-        height :130px;
+    <style>
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #ffd6e8, #fff);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
-    }
-  </style>
-</head>
 
-<body>
+      h1 {
+        font-family: "Poppins", sans-serif;
+        font-size: 48px;
+        color: #c94f7c;
+        margin-bottom: 30px;
+      }
 
-  <div class="container">
-    <h1>Holiis💕</h1>
+      .container {
+        text-align: center;
+        padding: 20px;
+      }
 
-    <div class="cards">
-      <div class="card" onclick="openModal('c1')">
-        <div class="card-icon">💌</div>
-        Cartita 1
-      </div>
+      .cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+      }
 
-      <div class="card" onclick="openModal('c2')">
-        <div class="card-icon">💌</div>
-        Cartita 2
-      </div>
+      .card {
+        background: white;
+        border-radius: 16px;
+        width: 100%;
+        max-width: 160px;
+        height: 150px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s;
+      }
 
-      <div class="card" onclick="openModal('c3')">
-        <div class="card-icon">💌</div>
-        Cartita 3
-      </div>
-      <div class="card" onclick="openModal('c2')">
-        <div class="card-icon">💌</div>
-        Cartita 4
-      </div>
-      <div class="card" onclick="openModal('c2')">
-        <div class="card-icon">💌</div>
-        Cartita 5
-      </div>
-      <div class="card" onclick="openModal('c2')">
-        <div class="card-icon">💌</div>
-       
-      </div>
-      <div class="card" onclick="openModal('c2')">
-        <div class="card-icon">💌</div>
-        Cartita 7
-      </div>
-      <div class="card" onclick="openModal('c2')">
-        <div class="card-icon">💌</div>
-        Cartita 8
+      .card:hover {
+        transform: translateY(-6px);
+      }
+
+      .card-icon {
+        font-size: 40px;
+        margin-bottom: 10px;
+      }
+
+      /* MODAL */
+      .modal-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(6px);
+        display: none;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        background: white;
+        padding: 34px;
+        border-radius: 18px;
+        max-width: 420px;
+        width: 92%;
+        text-align: center;
+        animation: scaleIn 0.3s ease;
+        position: relative;
+      }
+
+      @keyframes scaleIn {
+        from {
+          transform: scale(0.9);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 12px;
+        right: 16px;
+        cursor: pointer;
+        font-size: 18px;
+      }
+
+      #modal-text {
+        font-family: "Shadows Into Light", cursive;
+        font-size: clamp(15px, 3.8vw, 20px);
+        line-height: 1.9;
+        color: #5a3b45;
+        white-space: pre-wrap; /* respeta saltos de línea */
+      }
+      .song-link {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 22px;
+        background: #c94f7c;
+        color: white;
+        text-decoration: none;
+        border-radius: 30px;
+        font-size: 16px;
+      }
+
+      .song-link:hover {
+        background: #a83e66;
+      }
+
+      @media (max-width: 400px) {
+        h1 {
+          font-size: 32px;
+        }
+
+        .card {
+          height: 130px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Holiis💕</h1>
+
+      <div class="cards">
+        <div class="card" onclick="openModal('c1')">
+          <div class="card-icon">💌</div>
+          Cartita 1
+        </div>
+
+        <div class="card" onclick="openModal('c2')">
+          <div class="card-icon">💌</div>
+          Cartita 2
+        </div>
+
+        <div class="card" onclick="openModal('c3')">
+          <div class="card-icon">💌</div>
+          Cartita 3
+        </div>
+        <div class="card" onclick="openModal('c2')">
+          <div class="card-icon">💌</div>
+          Cartita 4
+        </div>
+        <div class="card" onclick="openModal('c2')">
+          <div class="card-icon">💌</div>
+          Cartita 5
+        </div>
+        <div class="card" onclick="openModal('c2')">
+          <div class="card-icon">💌</div>
+        </div>
+        <div class="card" onclick="openModal('c2')">
+          <div class="card-icon">💌</div>
+          Cartita 7
+        </div>
+        <div class="card" onclick="openModal('c2')">
+          <div class="card-icon">💌</div>
+          Cartita 8
+        </div>
+        <div class="card" onclick="openSongModal()">
+          <div class="card-icon">🎶</div>
+          Canción
+        </div>
+
+        <div id="song-modal" class="modal-bg" onclick="closeSongModal()">
+          <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="close-btn" onclick="closeSongModal()">✖</div>
+
+            <h2
+              style="
+                font-family: &quot;Great Vibes&quot;, cursive;
+                color: #c94f7c;
+              "
+            >
+              Ame
+            </h2>
+            <a
+              href="https://open.spotify.com/track/2edb2SIakC6HADUz6s34hS?si=q7k2ShDqS6KtIl0h0emT6Q"
+              target="_blank"
+              class="song-link"
+            >
+              Escuchar canción 🎧
+            </a>
+          </div>
+        </div>
+        <div class="card" onclick="openVideoModal()">
+          <div class="card-icon">🎥</div>
+          Video
+        </div>
+        <div id="video-modal" class="modal-bg" onclick="closeVideoModal()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+
+    <div class="close-btn" onclick="closeVideoModal()">✖</div>
+
+    <video id="myVideo" width="100%" controls>
+      <source src="video.mp4" type="video/mp4">
+      Tu navegador no soporta video
+    </video>
+
+  </div>
+</div>
+
       </div>
     </div>
-  </div>
 
-  <!-- MODAL -->
-  <div id="modal" class="modal-bg" onclick="closeModal()">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <div class="close-btn" onclick="closeModal()">✖</div>
-      <div id="modal-text">Cargando...</div>
+    <!-- MODAL -->
+    <div id="modal" class="modal-bg" onclick="closeModal()">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <div class="close-btn" onclick="closeModal()">✖</div>
+        <div id="modal-text">Cargando...</div>
+      </div>
     </div>
-  </div>
 
-<script>
-function openModal(key) {
-  const modalText = document.getElementById('modal-text');
-  modalText.innerText = 'Cargando...';
-  document.getElementById('modal').style.display = 'flex';
+    <script>
+      function openModal(key) {
+        const modalText = document.getElementById("modal-text");
+        modalText.innerText = "Cargando...";
+        document.getElementById("modal").style.display = "flex";
 
-  fetch(key + '.txt')
-    .then(response => {
-      if (!response.ok) throw new Error('No encontrado');
-      return response.text();
-    })
-    .then(text => {
-      modalText.innerText = text;
-    })
-    .catch(() => {
-      modalText.innerText = 'No se pudo cargar la cartita 💔';
-    });
-}
+        fetch(key + ".txt")
+          .then((response) => {
+            if (!response.ok) throw new Error("No encontrado");
+            return response.text();
+          })
+          .then((text) => {
+            modalText.innerText = text;
+          })
+          .catch(() => {
+            modalText.innerText = "No se pudo cargar la cartita 💔";
+          });
+      }
 
-function closeModal() {
-  document.getElementById('modal').style.display = 'none';
-}
-</script>
+      function closeModal() {
+        document.getElementById("modal").style.display = "none";
+      }
 
+      function openSongModal() {
+        document.getElementById("song-modal").style.display = "flex";
+      }
 
-</body>
+      function closeSongModal() {
+        document.getElementById("song-modal").style.display = "none";
+      }
+      function openVideoModal() {
+        document.getElementById("video-modal").style.display = "flex";
+      }
+
+      function closeVideoModal() {
+        document.getElementById("video-modal").style.display = "none";
+      }
+    </script>
+  </body>
 </html>
