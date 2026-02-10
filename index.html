@@ -53,9 +53,8 @@
       .card {
         background: white;
         border-radius: 16px;
-        width: 110px;
-        max-width: 160px;
-        height: 110px;
+        width: 100px;
+        height: 105px;
         margin: auto;
         display: flex;
         flex-direction: column;
@@ -64,7 +63,7 @@
         cursor: pointer;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         transition: transform 0.3s;
-        font-size: 14px;
+        font-size: 13px;
       }
 
       .card:hover {
@@ -142,7 +141,7 @@
         background: #a83e66;
       }
 
-      @media (max-width: 400px) {
+      @media (max-width: 480px) {
         h1 {
           font-size: 32px;
         }
@@ -150,6 +149,8 @@
         .card {
           height: 130px;
         }
+        .cards{
+          max-width: 350px;
       }
     </style>
   </head>
@@ -161,7 +162,7 @@
       <div class="cards">
         <div class="card" onclick="openModal('c1')">
           <div class="card-icon">💌</div>
-          Cartita 1
+          Cartita 1 cambio
         </div>
 
         <div class="card" onclick="openModal('c2')">
